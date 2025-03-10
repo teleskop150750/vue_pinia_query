@@ -18,7 +18,7 @@ export const useUserData = defineColadaLoader("/", {
 <script setup lang="ts">
 const route = useRoute("/");
 
-const { status, isLoading, error, state } = useUserData();
+const { status, isLoading, error, state, data } = useUserData();
 
 const roputer = useRouter();
 const search = shallowRef("");
@@ -46,5 +46,6 @@ function onSearch(e: Event) {
     </p>
     <pre v-if="error">Error: {{ error }}</pre>
     <pre v-else>{{ state.data == null ? String(state.data) : state.data }}</pre>
+    <pre>{{ data == null ? String(data) : data }}</pre>
   </main>
 </template>
