@@ -32,7 +32,7 @@ function onSearch(e: Event) {
 
 <template>
   <main>
-    <h1>Vue</h1>
+    <h1>Vue Lazy: false</h1>
     <pre>User: {{ route.query.id }}</pre>
 
     <input type="text" :value="search" @input="onSearch" />
