@@ -10,6 +10,7 @@ export const useUserData = defineColadaLoader("/lazy", {
     }).then((response) => response.json());
   },
   key: (to) => ["lazy", (to.query.search as string) ?? ""],
+  placeholderData: (v) => v,
   lazy: true,
 });
 </script>
@@ -31,7 +32,7 @@ function onSearch(e: Event) {
 
 <template>
   <main>
-    <h1>Pinia Colada Loader Example</h1>
+    <h1>Vue</h1>
     <pre>User: {{ route.query.id }}</pre>
 
     <input type="text" :value="search" @input="onSearch" />

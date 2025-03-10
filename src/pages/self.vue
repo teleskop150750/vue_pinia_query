@@ -14,6 +14,7 @@ const { status, isLoading, error, state } = useQuery({
     }).then((response) => response.json());
   },
   key: () => ["self", (route.query.search as string) ?? ""],
+  placeholderData: (v) => v,
 });
 
 const roputer = useRouter();
@@ -28,7 +29,7 @@ function onSearch(e: Event) {
 
 <template>
   <main>
-    <h1>Pinia Colada Loader Example</h1>
+    <h1>Vue</h1>
     <pre>User: {{ route.query.id }}</pre>
 
     <input type="text" :value="search" @input="onSearch" />
